@@ -1,0 +1,235 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tantangan & Dampak Negatif IPTEK</title>
+  <meta name="description" content="Artikel ringkas tentang kesenjangan digital, kecanduan teknologi, serta isu etika dan privasi—lengkap dengan contoh nyata." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --muted: #94a3b8;
+      --text: #e5e7eb;
+      --accent: #22c55e;
+      --accent-2: #38bdf8;
+      --ring: rgba(56, 189, 248, 0.4);
+      --shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --muted:#475569; --shadow:0 10px 25px rgba(2,6,23,.08);}    }* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 85% -10%, rgba(56,189,248,.08), transparent 60%),
+              radial-gradient(1000px 600px at 10% 110%, rgba(34,197,94,.10), transparent 60%),
+              var(--bg);
+  line-height: 1.6;
+}
+
+/* Layout */
+header {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--bg) 70%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--text) 12%, transparent);
+}
+.wrap { max-width: 1000px; margin: 0 auto; padding: 18px; }
+.brand { display:flex; gap:12px; align-items:center; }
+.logo { width: 36px; height: 36px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+nav { display:flex; gap: 14px; flex-wrap: wrap; align-items:center; }
+nav a { color: var(--muted); text-decoration:none; font-weight:600; padding:10px 12px; border-radius: 10px; }
+nav a:hover { color: var(--text); background: color-mix(in oklab, var(--card) 85%, transparent); }
+
+main { padding: 30px 18px 80px; }
+
+.hero { max-width: 1000px; margin: 0 auto 24px; display:grid; gap:18px; grid-template-columns: 1.2fr .8fr; align-items:center; }
+@media (max-width: 880px){ .hero{ grid-template-columns: 1fr; } }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0; }
+.hero p.lead { margin: 0; color: var(--muted); font-size: clamp(16px, 2.4vw, 18px); }
+.hero .card { background: color-mix(in oklab, var(--card) 90%, transparent); border: 1px solid color-mix(in oklab, var(--text) 14%, transparent); padding: 16px; border-radius: 18px; box-shadow: var(--shadow); }
+
+.grid { max-width: 1000px; margin: 0 auto; display:grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.col-4 { grid-column: span 4; }
+.col-8 { grid-column: span 8; }
+.col-12 { grid-column: span 12; }
+@media (max-width: 880px){ .col-4, .col-8 { grid-column: span 12; } }
+
+.section { background: color-mix(in oklab, var(--card) 88%, transparent); border: 1px solid color-mix(in oklab, var(--text) 12%, transparent); border-radius: 20px; padding: 18px; box-shadow: var(--shadow); }
+.section h2 { margin: 0 0 10px; font-size: clamp(22px, 3vw, 30px); }
+.section p { margin: 0 0 10px; }
+
+.badge { display:inline-flex; align-items:center; gap:8px; font-size: 12px; font-weight: 700; letter-spacing:.4px; text-transform: uppercase; color: var(--muted); background: color-mix(in oklab, var(--card) 85%, transparent); border: 1px dashed color-mix(in oklab, var(--text) 20%, transparent); padding: 6px 10px; border-radius: 999px; }
+
+.callout { border-left: 4px solid var(--accent-2); padding: 12px 14px; background: color-mix(in oklab, var(--card) 90%, transparent); border-radius: 14px; }
+
+ul.check { list-style: none; padding: 0 0 0 0; margin: 8px 0 0; }
+ul.check li { padding-left: 28px; position: relative; margin: 8px 0; }
+ul.check li::before { content: "✓"; position: absolute; left: 0; top: 0; font-weight: 900; color: var(--accent); }
+
+.examples { display:grid; gap: 10px; }
+.ex { background: color-mix(in oklab, var(--card) 92%, transparent); border: 1px solid color-mix(in oklab, var(--text) 12%, transparent); border-radius: 14px; padding: 12px; }
+.ex h4 { margin: 0 0 4px; font-size: 15px; }
+.ex p { margin: 0; font-size: 14px; color: var(--muted); }
+
+.footer { max-width: 1000px; margin: 24px auto 0; color: var(--muted); font-size: 14px; display:flex; justify-content:space-between; gap:12px; flex-wrap: wrap; padding: 0 18px 24px; }
+
+.toc { position: sticky; top: 84px; align-self: start; }
+.toc a { display:block; color: var(--muted); text-decoration:none; padding: 8px 10px; border-radius: 10px; font-size: 14px; }
+.toc a:hover { color: var(--text); background: color-mix(in oklab, var(--card) 85%, transparent); }
+
+.btn { display:inline-flex; align-items:center; gap:10px; border: 1px solid color-mix(in oklab, var(--text) 12%, transparent); background: color-mix(in oklab, var(--card) 90%, transparent); color: var(--text); padding: 10px 14px; border-radius: 12px; text-decoration:none; font-weight: 700; box-shadow: var(--shadow); }
+.btn:hover { border-color: color-mix(in oklab, var(--text) 28%, transparent); }
+
+/* Print */
+@media print {
+  header, .toc, .btn-row, .footer { display: none !important; }
+  body { background: white; }
+  .section { box-shadow: none; border: 1px solid #e5e7eb; }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>Tantangan & Dampak Negatif IPTEK</strong><br>
+          <small style="color:var(--muted)">Artikel ringkas + contoh nyata</small>
+        </div>
+      </div>
+      <nav aria-label="Navigasi utama">
+        <a href="#kesenjangan">Kesenjangan Digital</a>
+        <a href="#kecanduan">Kecanduan Teknologi</a>
+        <a href="#etika">Etika & Privasi</a>
+      </nav>
+    </div>
+  </header>  <main>
+    <section class="hero">
+      <div>
+        <span class="badge">IPTEK • Dampak & Tantangan</span>
+        <h1>Perkembangan IPTEK: Manfaat Besar, Tantangan Nyata</h1>
+        <p class="lead">Kemajuan teknologi mempermudah hidup, namun di sisi lain menghadirkan kesenjangan akses, risiko kecanduan, serta problem etika dan privasi. Halaman ini merangkum isu-isu utama beserta contoh konkret agar mudah dipahami dan dipakai untuk tugas sekolah.</p>
+        <div class="btn-row" style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+          <a class="btn" href="#ringkasan">Baca Ringkasan</a>
+          <button class="btn" onclick="window.print()">Cetak / Simpan PDF</button>
+        </div>
+      </div>
+      <div class="card" role="img" aria-label="Ilustrasi grafik kemajuan teknologi dan dampaknya">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+          <div class="ex">
+            <h4>+ Akses Informasi</h4>
+            <p>Informasi makin cepat dan luas.</p>
+          </div>
+          <div class="ex">
+            <h4>− Kesenjangan</h4>
+            <p>Tidak semua orang terjangkau.</p>
+          </div>
+          <div class="ex">
+            <h4>+ Produktivitas</h4>
+            <p>Pekerjaan jadi efisien.</p>
+          </div>
+          <div class="ex">
+            <h4>− Privasi</h4>
+            <p>Data pribadi rentan bocor.</p>
+          </div>
+        </div>
+      </div>
+    </section><div class="grid" id="ringkasan" style="margin-top:10px;">
+  <aside class="col-4 toc" aria-label="Daftar isi">
+    <div class="section">
+      <h2 style="font-size:18px; margin:0 0 6px;">Daftar Isi</h2>
+      <a href="#kesenjangan">1. Kesenjangan Digital</a>
+      <a href="#kecanduan">2. Kecanduan Teknologi</a>
+      <a href="#etika">3. Etika & Privasi</a>
+    </div>
+  </aside>
+
+  <article class="col-8">
+    <section class="section" id="kesenjangan">
+      <h2>1) Kesenjangan Digital</h2>
+      <p><strong>Kesenjangan digital</strong> terjadi ketika sebagian kelompok memiliki akses perangkat, internet cepat, dan literasi digital yang baik, sementara kelompok lain tidak. Akibatnya, peluang belajar, kerja, dan layanan publik digital tidak dirasakan merata.</p>
+      <div class="callout">
+        <strong>Dampak utama:</strong>
+        <ul class="check">
+          <li>Ketimpangan pendidikan (akses materi dan kelas daring).</li>
+          <li>UMKM tertinggal karena tidak masuk ekosistem digital.</li>
+          <li>Akses layanan publik (kesehatan, administrasi) jadi tidak inklusif.</li>
+        </ul>
+      </div>
+      <div class="examples" aria-label="Contoh kesenjangan digital">
+        <div class="ex"><h4>Contoh 1 — Sekolah</h4><p>Siswa di kota belajar daring dengan laptop & Wi‑Fi; siswa di desa harus mencari sinyal ke bukit untuk mengirim tugas.</p></div>
+        <div class="ex"><h4>Contoh 2 — UMKM</h4><p>Toko urban naik omzet lewat e‑commerce; pedagang di pelosok tetap mengandalkan pembeli lokal karena akses digital minim.</p></div>
+        <div class="ex"><h4>Contoh 3 — Layanan Publik</h4><p>Pendaftaran kesehatan online mudah di kota; warga tanpa internet kesulitan mendaftar dan mendapat informasi.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="kecanduan">
+      <h2>2) Kecanduan Teknologi & Dampak Sosial</h2>
+      <p>Kemudahan akses gim, media sosial, dan streaming dapat memicu <strong>kecanduan</strong>. Ini mengganggu fokus belajar/kerja, pola tidur, kesehatan mental, dan kualitas interaksi tatap muka.</p>
+      <div class="callout">
+        <strong>Tanda-tanda umum:</strong>
+        <ul class="check">
+          <li>Memikirkan gawai terus-menerus dan sulit berhenti.</li>
+          <li>Menunda tugas, kurang tidur, menurun prestasi.</li>
+          <li>Menarik diri dari pertemanan real‑life.</li>
+        </ul>
+      </div>
+      <div class="examples" aria-label="Contoh kecanduan teknologi">
+        <div class="ex"><h4>Contoh 1 — Remaja & Gim</h4><p>Bermain game online berjam-jam hingga lupa belajar dan olahraga.</p></div>
+        <div class="ex"><h4>Contoh 2 — Phubbing</h4><p>Kumpul keluarga tapi semua sibuk scroll ponsel; obrolan jadi hambar.</p></div>
+        <div class="ex"><h4>Contoh 3 — Media Sosial</h4><p>Mengejar likes/komentar memicu cemas dan FOMO, memengaruhi kepercayaan diri.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="etika">
+      <h2>3) Masalah Etika & Privasi</h2>
+      <p>Transformasi digital memunculkan dilema baru: pengumpulan <strong>data pribadi</strong>, algoritma yang bias, deepfake, hingga pengawasan masif. Tanpa tata kelola, hak individu bisa terancam.</p>
+      <div class="callout">
+        <strong>Isu penting:</strong>
+        <ul class="check">
+          <li>Perlindungan data: kebocoran dan penyalahgunaan informasi pribadi.</li>
+          <li>Etika AI: transparansi, akurasi, dan bias algoritma.</li>
+          <li>Pengawasan vs privasi: CCTV & pelacakan lokasi.</li>
+        </ul>
+      </div>
+      <div class="examples" aria-label="Contoh etika & privasi">
+        <div class="ex"><h4>Contoh 1 — Kebocoran Data</h4><p>Data pengguna aplikasi bocor lalu dipakai untuk penipuan via SMS/WhatsApp.</p></div>
+        <div class="ex"><h4>Contoh 2 — Deepfake</h4><p>Video palsu menyerupai tokoh publik menyebar dan merusak reputasi.</p></div>
+        <div class="ex"><h4>Contoh 3 — CCTV Berlebihan</h4><p>Keamanan meningkat, namun pengawasan tanpa batas mengikis privasi warga.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="penutup">
+      <h2>Kesimpulan</h2>
+      <p>Perkembangan IPTEK adalah pedang bermata dua. Untuk memaksimalkan manfaat dan meminimalkan dampak negatif, perlu kebijakan inklusif, literasi digital, serta tata kelola data dan AI yang etis.</p>
+      <div class="callout"><strong>Tips ringkas: </strong>perkuat literasi digital, atur waktu layar, aktifkan pengamanan akun (2FA), dan kritisi informasi yang diterima.</div>
+    </section>
+  </article>
+</div>
+
+<div class="footer" role="contentinfo">
+  <div>© 2025 — Disusun untuk tugas sekolah oleh Wildan.</div>
+  <div><a class="btn" href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'})">Kembali ke atas</a></div>
+</div>
+
+  </main>  <script>
+    // Optional: Hash-aware smooth scroll (improves UX when clicking TOC links)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+          const el = document.querySelector(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.pushState(null, '', id);
+          }
+        }
+      });
+    });
+  </script></body>
+</html>
